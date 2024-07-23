@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Document</title>
+</head>
+<body>
+    <section class="h-screen bg-black flex flex-col justify-center items-center">
+        <img src="https://ik.imagekit.io/4z8covdo9/Full%20stack/bulb-go-on-img.png" alt="bulb-image" class="h-[200px]" id="bulb">
+
+        <img src="https://ik.imagekit.io/4z8covdo9/Full%20stack/cat-img.png" alt="cat-iamge" class="h-[400px] " id="cat">
+
+        <div class="bg-white bg-opacity-40 p-6 w-[400px] flex flex-col justify-center items-center rounded-lg gap-y-2">
+            <p id="stmt" class=" text-red-400">SWITCH OFF</p>
+             <div>
+            <button id="btn-on" class="bg-green-500 px-4 py-2 rounded-lg text-white">
+                ON
+            </button>
+            <button id="btn-off" class="bg-red-500  px-4 py-2 rounded-lg text-white">
+                OFF
+            </button>
+             </div>   
+            
+        </div>
+    </section>
+
+    <script>
+        const cat=document.getElementById("cat")
+        
+        const bulb=document.getElementById("bulb")
+
+        const para=document.getElementById("stmt")
+
+        const btn_on=document.getElementById("btn-on")
+
+        const btn_off=document.getElementById("btn-off")
+
+        btn_on.addEventListener("click",()=>{
+            console.log("btn-on-clicked")
+
+            //property
+            
+            cat.src="https://ik.imagekit.io/4z8covdo9/Full%20stack/cat-img.png"
+
+            bulb.src="https://ik.imagekit.io/4z8covdo9/Full%20stack/bulb-go-on-img.png"
+            
+            para.textContent="SWITCH OFF"
+
+           para.style.color="#f87171 "
+
+           btn_on.style.backgroundColor="darkgreen"
+
+           btn_off.style.backgroundColor="rgb(239 68 68 / var(--tw-bg-opacity))"
+           
+           console.log(btn_on)
+        })
+
+        btn_off.addEventListener("click",()=>{
+            console.log("btn-off-clicked")
+
+            cat.src="https://ik.imagekit.io/4z8covdo9/Full%20stack/cat-eyes-img.png"
+
+            bulb.src="https://ik.imagekit.io/4z8covdo9/Full%20stack/bulb-go-off-img.png"
+            
+            para.textContent="SWITCH ON"
+
+              para.style.color="lightgreen"
+
+            btn_off.style.backgroundColor="darkred"
+
+            btn_on.style.backgroundColor="rgb(34 197 94 / var(--tw-bg-opacity))"
+   
+        })
+    </script>
+</body>
+</html>
